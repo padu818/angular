@@ -1,0 +1,32 @@
+<p-table *ngIf="drivers.length > 0" [value]="drivers">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nombre y apellido</th>
+      <th>Documento</th>
+      <th>Telefono</th>
+      <th>Telefono auxiliar</th>
+      <th>Correo</th>
+      <th>Vehiculo(patente)</th>
+      <th>Acciones</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-driver>
+    <tr>
+      <td>{{ driver.apellidoNombre }}</td>
+      <td>{{ driver.documento }}</td>
+      <td>{{ driver.telefono }}</td>
+      <td>{{ driver.telefonoAuxiliar }}</td>
+      <td>{{ driver.mail }}</td>
+      <td>{{ driver.vehiculo }}</td>
+      <td>
+        <button
+        pButton
+          pRipple
+          type="button"
+          (click)="onClickedChofer(driver.id)"
+          icon="pi pi-eye"
+          class="p-button-rounded p-button-outlined"
+        ></button>
+      </td>
+    </tr> </ng-template
+></p-table>

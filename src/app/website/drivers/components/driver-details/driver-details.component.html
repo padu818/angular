@@ -1,0 +1,19 @@
+<div *ngIf="driver$ | async as driver">
+  <div *ngIf="!booleano">
+    <h1>{{ driver.apellidoNombre }}</h1>
+    <h1>{{ driver.documento }}</h1>
+    <h1>{{ driver.mail }}</h1>
+    <h1>{{ driver.telefono }}</h1>
+    <h1>{{ driver.telefonoAuxiliar }}</h1>
+    <h1>{{ driver.vehiculo }}</h1>
+    <p-button
+      class="button-color"
+      label="editar"
+      (click)="edit()"
+      [disabled]="false"
+    ></p-button>
+  </div>
+  <div *ngIf="booleano">
+    <app-driver-form-edit [driver]="driver" ></app-driver-form-edit>
+  </div>
+</div>

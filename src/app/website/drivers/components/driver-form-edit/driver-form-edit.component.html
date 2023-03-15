@@ -1,0 +1,79 @@
+<form [formGroup]="driverForm" novalidate (ngSubmit)="onSubmit(driverForm.value)" *ngIf="driver">
+  <div>
+    <header>
+      <h1 class="title">EDIT</h1>
+    </header>
+    <body class="body">
+        <div class="row">
+          <span class="p-float-label">
+            <input
+              id="First name"
+              type="text"
+              pInputText
+              placeholder=`${driver$.apellidoNombre?}`
+              formControlName="apellidoNombre"
+            />
+            <label for="float-input">Nombre y apellido</label>
+          </span>
+          <em *ngIf="driverForm.controls.apellidoNombre?.invalid && 
+          driverForm.controls.apellidoNombre?.touched">El campo Nombre y apellido es obligatorio</em>
+        </div>
+        <div class="row">
+          <span class="p-float-label">
+            <p-inputNumber
+              id="doc"
+              mode="decimal"
+              [maxFractionDigits]="0"
+              formControlName="documento"
+            />
+            <label for="float-input">Documento</label>
+          </span>
+        </div>
+      <div class="row">
+          <span class="p-float-label">
+            <input
+              id="Telefono"
+              type="text"
+              pInputText
+              formControlName="telefono"
+            />
+            <label for="float-input">Telefono</label>
+          </span>
+        </div>
+      <div class="row">
+          <span class="p-float-label">
+            <input
+              id="telefonoAuxiliar"
+              type="text"
+              pInputText
+              formControlName="telefonoAuxiliar"
+            />
+            <label for="float-input">Telefono auxiliar</label>
+          </span>
+      </div>
+      <div class="row">
+          <span class="p-float-label">
+            <input
+              id="First name"
+              type="text"
+              pInputText
+              formControlName="mail"
+            />
+            <label for="float-input">Mail</label>
+          </span>
+      </div>
+<!--       <div class="row" *ngIf="vehicles">
+        <label class="">Seleccione un vehículo</label>
+        <p-dropdown [options]="vehicles" optionValue="id" optionLabel="patente" *ngIf="vehicles"></p-dropdown>
+      </div> -->
+    </body>
+    <div>
+      <p-button
+      class="button-color"
+      label="editar"
+      type="submit"
+      [disabled]="!driverForm.valid"
+    ></p-button>
+    </div>
+  </div>
+</form>

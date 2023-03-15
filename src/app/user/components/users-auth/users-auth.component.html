@@ -1,0 +1,19 @@
+<form novalidate [formGroup]="form" class="login-form">
+  <div class="Lbody">
+    <label class="LLabel" >Username</label>
+    <input type="text" pInputText formControlName="username" class="p-inputtext-lg"/>
+  </div>
+  <div  class="Lbody">
+    <label class="LLabel" >password</label>
+    <p-password class="LInput" formControlName="password"></p-password>
+  </div>
+  <div class="Lbody">
+    <p-button  class="button-color"
+      label="Ingresar"
+      (click)="login()"
+      [disabled]="false"
+    ></p-button>
+    <p-toast></p-toast>
+  </div>
+</form>
+
